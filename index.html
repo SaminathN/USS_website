@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uitenhage Super Steel (USS) | Manufacturing & Erecting Excellence Since 1972</title>
+    <meta name="description"
+        content="Uitenhage Super Steel (USS) - ISO 9001:2015 certified structural steel fabricators. Established 1972 in the automotive hub of Nelson Mandela Metro. Expertise in manufacturing and erecting structural steel.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // Deep blue
+                        secondary: '#475569', // Slate gray
+                        accent: '#CC0000', // Industrial Red
+                        light: '#f8fafc',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-dark bg-white antialiased">
+
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#">
+                        <img src="./images/uss_logo1.png" alt="Uitenhage Super Steel (USS)" class="h-16 w-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
+
+                    <div class="relative group">
+                        <button
+                            class="text-secondary hover:text-primary font-medium flex items-center transition-colors">
+                            Services <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
+                            <a href="#services"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary border-b border-gray-50">Pre-construction</a>
+                            <a href="#services"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary border-b border-gray-50">Project
+                                Management</a>
+                            <a href="#services"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary border-b border-gray-50">Certifications</a>
+                            <a href="#services"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">Fabrication</a>
+                        </div>
+                    </div>
+
+                    <a href="#projects"
+                        class="text-secondary hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Careers</a>
+
+                    <div class="relative group">
+                        <button
+                            class="text-secondary hover:text-primary font-medium flex items-center transition-colors">
+                            About Us <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary border-b border-gray-50">Our
+                                Values</a>
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary border-b border-gray-50">Our
+                                Story</a>
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">Our
+                                Leadership</a>
+                        </div>
+                    </div>
+
+                    <a href="#contact"
+                        class="bg-accent hover:bg-orange-700 text-white px-5 py-2.5 rounded font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contact
+                        Us</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-20 px-6 h-screen overflow-y-auto">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-dark p-2">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="space-y-6 text-center">
+                <a href="#" class="mobile-link block text-xl font-medium text-dark hover:text-primary">Home</a>
+                <a href="#services"
+                    class="mobile-link block text-xl font-medium text-dark hover:text-primary">Services</a>
+                <a href="#projects"
+                    class="mobile-link block text-xl font-medium text-dark hover:text-primary">Projects</a>
+                <a href="#" class="mobile-link block text-xl font-medium text-dark hover:text-primary">Careers</a>
+                <a href="#" class="mobile-link block text-xl font-medium text-dark hover:text-primary">About Us</a>
+                <a href="#contact"
+                    class="mobile-link inline-block mt-4 bg-accent text-white px-8 py-3 rounded text-lg font-medium shadow-lg">Contact
+                    Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <!-- Background Video with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline preload="auto"
+                poster="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                class="w-full h-full object-cover">
+                <source src="./media/hero-video.mp4" type="video/mp4">
+                <source src="./media/hero-video.webm" type="video/webm">
+                <!-- Fallback for browsers that support neither -->
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Steel Construction" class="w-full h-full object-cover">
+            </video>
+            <div class="absolute inset-0 bg-black/40"></div> <!-- CSS Overlay (using Tailwind opacity) -->
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+            <h1
+                class="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight drop-shadow-lg text-white text-shadow-hero">
+                Expertise in Manufacturing <br><span class="text-accent"> & Erecting Structural Steel</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto font-light">
+                Since 1972, delivering quality structural steel solutions in the Nelson Mandela Metro's automotive
+                industry hub.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services"
+                    class="bg-accent hover:bg-orange-700 text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    Explore Our Services
+                </a>
+                <a href="#projects"
+                    class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    View Projects
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#services" class="text-white opacity-70 hover:opacity-100 transition-opacity">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <!-- Quality & Certifications Section -->
+    <section class="py-20 bg-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Certification Image -->
+                <div class="relative h-[400px] w-full rounded-xl overflow-hidden shadow-2xl">
+                    <!-- Placeholder until user uploads image -->
+                    <img src="./images/certification.png"
+                        onerror="this.src='https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'"
+                        alt="ISO 9001:2015 Certification" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Right Column: Quality Policy -->
+                <div>
+                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Quality Assurance</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white text-shadow-hero">Our Commitment to
+                        Excellence</h2>
+
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        At <span class="text-white font-semibold">Uitenhage Super Steel (USS)</span>, quality is the
+                        foundation of every structure we build. We are committed to providing superior steel fabrication
+                        and erection services that exceed industry standards.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-8">
+                        By adhering to strict <span class="text-accent font-semibold">ISO 9001:2015</span> protocols and
+                        SAISC regulations, we ensure that every project—from small-scale manufacturing to massive
+                        industrial developments—is delivered with precision, safety, and structural integrity.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white/10 px-4 py-2 rounded-lg border border-white/20 flex items-center">
+                            <i class="fa-solid fa-certificate text-accent mr-3"></i> ISO 9001:2015
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-lg border border-white/20 flex items-center">
+                            <i class="fa-solid fa-hard-hat text-accent mr-3"></i> SAISC Member
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">What We Do</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Our Services</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Services Carousel Container -->
+            <div class="relative group">
+                <!-- Navigation Arrows -->
+                <button id="servicesPrev"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 bg-dark/80 text-accent p-4 rounded-full hover:bg-white hover:scale-110 transition-all shadow-lg border border-accent">
+                    <i class="fa-solid fa-chevron-left text-xl"></i>
+                </button>
+                <button id="servicesNext"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 bg-dark/80 text-accent p-4 rounded-full hover:bg-white hover:scale-110 transition-all shadow-lg border border-accent">
+                    <i class="fa-solid fa-chevron-right text-xl"></i>
+                </button>
+
+                <!-- Carousel Track -->
+                <div class="overflow-hidden rounded-xl">
+                    <div id="servicesTrack" class="flex transition-transform duration-500 ease-out">
+
+                        <!-- Service 1: Engineering -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div
+                                class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group h-full border border-gray-700 hover:border-accent">
+                                <div class="p-8">
+                                    <div
+                                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                                        <i
+                                            class="fa-solid fa-pen-ruler text-3xl text-accent group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <h3
+                                        class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">
+                                        Engineering & Fabrication</h3>
+                                    <p class="text-gray-300 text-sm leading-relaxed">
+                                        High-capacity manufacturing of complex steel structures tailored to industrial
+                                        and energy requirements.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 2: Erection -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div
+                                class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group h-full border border-gray-700 hover:border-accent">
+                                <div class="p-8">
+                                    <div
+                                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                                        <i
+                                            class="fa-solid fa-building text-3xl text-accent group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <h3
+                                        class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">
+                                        Structural Steel Erection</h3>
+                                    <p class="text-gray-300 text-sm leading-relaxed">
+                                        Expert on-site assembly and installation managed by experienced teams to ensure
+                                        structural integrity.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 3: Custom Beam -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div
+                                class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group h-full border border-gray-700 hover:border-accent">
+                                <div class="p-8">
+                                    <div
+                                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                                        <i
+                                            class="fa-solid fa-fire-burner text-3xl text-accent group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <h3
+                                        class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">
+                                        Custom Beam Fabrication</h3>
+                                    <p class="text-gray-300 text-sm leading-relaxed">
+                                        Specialized production of heavy-duty beams and support structures for
+                                        large-scale infrastructure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 4: Rigging -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div
+                                class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group h-full border border-gray-700 hover:border-accent">
+                                <div class="p-8">
+                                    <div
+                                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                                        <i
+                                            class="fa-solid fa-truck-front text-3xl text-accent group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <h3
+                                        class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">
+                                        Rigging & Logistics Fleet</h3>
+                                    <p class="text-gray-300 text-sm leading-relaxed">
+                                        Comprehensive transport and lifting solutions utilizing specialized crane trucks
+                                        for precision placement.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div id="servicesDots" class="flex justify-center space-x-2 mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our Work</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Featured Projects</h2>
+                </div>
+                <a href="#"
+                    class="hidden md:inline-block border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded font-medium transition-colors mt-4 md:mt-0">
+                    View All Projects
+                </a>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="relative group">
+                <!-- Navigation Arrows -->
+                <button id="prevBtn"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 bg-dark/80 text-accent p-4 rounded-full hover:bg-white hover:scale-110 transition-all shadow-lg border border-accent">
+                    <i class="fa-solid fa-chevron-left text-xl"></i>
+                </button>
+                <button id="nextBtn"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 bg-dark/80 text-accent p-4 rounded-full hover:bg-white hover:scale-110 transition-all shadow-lg border border-accent">
+                    <i class="fa-solid fa-chevron-right text-xl"></i>
+                </button>
+
+                <!-- Carousel Track -->
+                <div class="overflow-hidden rounded-xl">
+                    <div id="carouselTrack" class="flex transition-transform duration-500 ease-out">
+
+                        <!-- 1. VWSA Body Shop -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div class="group relative overflow-hidden rounded-xl cursor-pointer h-96 shadow-2xl">
+                                <img src="./images/VWSA.jpg" alt="VWSA Body Shop"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full">
+                                    <p class="text-accent text-sm font-bold uppercase mb-2">Automotive</p>
+                                    <h3 class="text-white text-2xl font-bold">VWSA Body Shop</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. DCD Wind Tower Plant -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div class="group relative overflow-hidden rounded-xl cursor-pointer h-96 shadow-2xl">
+                                <img src="./images/DCD.jpg" alt="DCD Wind Tower Plant"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full">
+                                    <p class="text-accent text-sm font-bold uppercase mb-2">Industrial</p>
+                                    <h3 class="text-white text-2xl font-bold">DCD Wind Tower Plant</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. DC Fruit Packers -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div class="group relative overflow-hidden rounded-xl cursor-pointer h-96 shadow-2xl">
+                                <img src="./images/DC Fruit Packers.jpg" alt="DC Fruit Packers"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full">
+                                    <p class="text-accent text-sm font-bold uppercase mb-2">Agricultural</p>
+                                    <h3 class="text-white text-2xl font-bold">DC Fruit Packers</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Greenacres Shopping Centre -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div class="group relative overflow-hidden rounded-xl cursor-pointer h-96 shadow-2xl">
+                                <img src="./images/Greanacres.jpg" alt="Greenacres Shopping Centre"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full">
+                                    <p class="text-accent text-sm font-bold uppercase mb-2">Retail</p>
+                                    <h3 class="text-white text-2xl font-bold">Greenacres Shopping Centre</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Dedisa & Avon Power Plants -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div class="group relative overflow-hidden rounded-xl cursor-pointer h-96 shadow-2xl">
+                                <img src="./images/Dedisa & Avon.jpg" alt="Dedisa & Avon Power Plants"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full">
+                                    <p class="text-accent text-sm font-bold uppercase mb-2">Energy</p>
+                                    <h3 class="text-white text-2xl font-bold">Dedisa & Avon Power Plants</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Substation Steel (Ikangeng) -->
+                        <div class="min-w-full md:min-w-[33.333%] p-4">
+                            <div class="group relative overflow-hidden rounded-xl cursor-pointer h-96 shadow-2xl">
+                                <img src="./images/Substation Steel.jpg" alt="Substation Steel"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full">
+                                    <p class="text-accent text-sm font-bold uppercase mb-2">Infrastructure</p>
+                                    <h3 class="text-white text-2xl font-bold">Substation Steel (Ikangeng)</h3>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div id="carouselDots" class="flex justify-center space-x-2 mt-8">
+                    <!-- Dots generated by JS -->
+                </div>
+            </div>
+
+            <div class="mt-8 text-center md:hidden">
+                <a href="#"
+                    class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded font-medium transition-colors">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-20 bg-primary relative overflow-hidden">
+        <!-- Abstract Background Shape -->
+        <i class="fa-solid fa-industry absolute -bottom-10 -right-10 text-9xl text-white/5 rotate-12"></i>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero mb-6">Ready to start your project?
+            </h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                Our friendly team would love to hear from you. Let's build something great together.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="mailto:ginkel@uss.co.za"
+                    class="bg-accent hover:bg-orange-700 text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                    <i class="fa-solid fa-envelope mr-2"></i> Email Us
+                </a>
+                <a href="tel:+27419228060"
+                    class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                    <i class="fa-solid fa-phone mr-2"></i> +27 41 922 8060
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Branding -->
+                <div>
+                    <a href="#" class="mb-6 block">
+                        <img src="./images/uss_logo1.png" alt="Uitenhage Super Steel (USS)"
+                            class="h-14 w-auto brightness-0 invert">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Established 1972. ISO 9001:2015 certified. Leaders in structural steel manufacturing and
+                        erecting in the Nelson Mandela Metro.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com" target="_blank"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-accent flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-accent flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-accent flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-accent inline-block pb-1">Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition-colors">Services</a>
+                        </li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-accent transition-colors">Projects</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Careers</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-accent transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-accent inline-block pb-1">Services
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Pre-construction</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Project Management</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Certifications</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Structural
+                                Fabrication</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Erection Services</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-accent inline-block pb-1">Contact
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-accent mt-1.5 mr-3"></i>
+                            <span class="text-gray-400">2 Schonland St<br>Cape Road Industrial<br>Uitenhage,
+                                6229<br>South Africa</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone text-accent mr-3"></i>
+                            <span class="text-gray-400">+27 41 922 8060</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope text-accent mr-3"></i>
+                            <span class="text-gray-400">ginkel@uss.co.za</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Uitenhage Super Steel (USS). All rights reserved. Established 1972.</p>
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
