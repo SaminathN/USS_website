@@ -135,13 +135,48 @@ document.addEventListener('DOMContentLoaded', () => {
         tabletSlides: 2
     });
 
-    // Initialize Services Carousel
-    initCarousel({
-        trackId: 'servicesTrack',
-        prevId: 'servicesPrev',
-        nextId: 'servicesNext',
-        dotsId: 'servicesDots',
-        desktopSlides: 3, // User asked for 3-4. 3 looks better on 1280px container.
-        tabletSlides: 2
-    });
+    // Quote Form Handling
+    const quoteForm = document.getElementById('quote-form');
+    const quoteSuccess = document.getElementById('quote-success');
+    const quoteError = document.getElementById('quote-error');
+    const errorMessage = document.getElementById('error-message');
+
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(quoteForm);
+            const data = Object.fromEntries(formData);
+
+            // Hide previous messages
+            quoteSuccess.classList.add('hidden');
+            quoteError.classList.add('hidden');
+
+            // Simple client-side validation
+            if (!data.name || !data.email || !data.phone || !data.industry || !data.message) {
+                quoteError.classList.remove('hidden');
+                errorMessage.textContent = 'Please fill in all required fields.';
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                quoteError.classList.remove('hidden');
+                errorMessage.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Construct mailto link
+            const subject = `Quote Request: ${data.projectType} - ${data.company || data.name}`;
+            const body = `Name: ${data.name}%0D%0ACompany: ${data.company}%0D%0AEmail: ${data.email}%0D%0APhone: ${data.phone}%0D%0AProject Type: ${data.projectType}%0D%0ATimeline: ${data.timeline}%0D%0A%0D%0AMessage:%0D%0A${data.message}`;
+
+            window.location.href = `mailto:sales@uss.org.za,saminan24@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            // Show success message (optional, as user leaves page)
+            quoteSuccess.classList.remove('hidden');
+            quoteForm.reset();
+        });
+    }
 });
