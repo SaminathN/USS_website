@@ -169,14 +169,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Construct mailto link
-            const subject = `Quote Request: ${data.projectType} - ${data.company || data.name}`;
-            const body = `Name: ${data.name}%0D%0ACompany: ${data.company}%0D%0AEmail: ${data.email}%0D%0APhone: ${data.phone}%0D%0AProject Type: ${data.projectType}%0D%0ATimeline: ${data.timeline}%0D%0A%0D%0AMessage:%0D%0A${data.message}`;
+            const subject = `Quote Request: ${data.industry} - ${data.company || data.name}`;
+            const body = `Name: ${data.name}%0D%0ACompany: ${data.company}%0D%0AEmail: ${data.email}%0D%0APhone: ${data.phone}%0D%0AIndustry: ${data.industry}%0D%0ATimeline: ${data.timeline}%0D%0A%0D%0AMessage:%0D%0A${data.message}`;
 
-            window.location.href = `mailto:sales@uss.org.za,saminan24@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-            // Show success message (optional, as user leaves page)
+            // Show success message before opening mail client
             quoteSuccess.classList.remove('hidden');
             quoteForm.reset();
+
+            setTimeout(() => {
+                window.location.href = `mailto:sales@uss.org.za,saminan24@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            }, 1500);
         });
     }
 });

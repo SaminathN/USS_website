@@ -23,16 +23,16 @@ section {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #374151;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #CC0000;
 }
 
 /* Base Styles */
