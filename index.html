@@ -38,11 +38,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e3a8a', // Deep blue
-                        secondary: '#475569', // Slate gray
-                        accent: '#CC0000', // Industrial Red
-                        light: '#f8fafc',
-                        dark: '#1e293b',
+                        primary: '#001e50', // VW Navy
+                        secondary: '#6a767d', // VW Gray
+                        accent: '#001e50',   // VW Navy (buttons/labels)
+                        cyan: '#00b0f0',     // VW Cyan (hover)
+                        light: '#f4f4f4',    // Light section bg
+                        dark: '#000e26',     // Near-black text
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -56,19 +57,19 @@
 <body class="font-sans text-dark bg-white antialiased">
 
     <!-- Navigation -->
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300" id="navbar">
+    <header class="fixed w-full z-50" id="navbar">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#">
-                        <img src="./images/uss_logo1.png" alt="Uitenhage Super Steel (USS)" class="h-16 w-auto">
+                        <img src="./images/uss_logo1.png" alt="Uitenhage Super Steel (USS)" class="h-16 w-auto brightness-0 invert transition-all duration-300" id="nav-logo">
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
                 <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="#" class="nav-link font-medium">Home</a>
 
                     <div class="relative group">
                         <button
@@ -170,7 +171,7 @@
                         class="text-secondary hover:text-primary font-medium transition-colors">Industries</a>
                     <a href="#projects"
                         class="text-secondary hover:text-primary font-medium transition-colors">Projects</a>
-                    <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Careers</a>
+                    <a href="#" class="nav-link font-medium">Careers</a>
 
                     <div class="relative group">
                         <button
@@ -195,14 +196,14 @@
                     </div>
 
                     <a href="#quote"
-                        class="bg-accent hover:bg-orange-700 text-white px-5 py-2.5 rounded font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Request
+                        class="nav-cta">Request
                         a Quote</a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-dark hover:text-primary focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                        <i class="fa-solid fa-bars text-2xl mobile-menu-btn-icon" id="mobile-menu-icon"></i>
                     </button>
                 </div>
             </div>
@@ -245,7 +246,7 @@
                 <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
                     alt="Steel Construction" class="w-full h-full object-cover">
             </video>
-            <div class="absolute inset-0 bg-black/40"></div> <!-- CSS Overlay (using Tailwind opacity) -->
+            <div class="absolute inset-0" style="background: radial-gradient(circle at 50% 85%, rgba(0,67,122,0.75) 0%, rgba(0,30,80,0.88) 100%);"></div>
         </div>
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
@@ -259,11 +260,11 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#capabilities"
-                    class="bg-accent hover:bg-orange-700 text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    class="btn-primary text-lg font-semibold">
                     Explore Our Services
                 </a>
                 <a href="#projects"
-                    class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    class="btn-ghost text-lg font-semibold">
                     View Projects
                 </a>
             </div>
@@ -278,24 +279,24 @@
     </section>
 
     <!-- Stats Bar -->
-    <section class="py-12 bg-gray-900 border-y border-gray-800">
+    <section class="py-12 bg-white border-y border-gray-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <p class="text-4xl md:text-5xl font-bold text-accent">50+</p>
-                    <p class="text-gray-400 mt-2 text-sm uppercase tracking-wider">Years of Excellence</p>
+                    <p class="text-4xl md:text-5xl font-bold text-primary">50+</p>
+                    <p class="text-gray-500 mt-2 text-sm uppercase tracking-wider">Years of Excellence</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-bold text-accent">500+</p>
-                    <p class="text-gray-400 mt-2 text-sm uppercase tracking-wider">Projects Completed</p>
+                    <p class="text-4xl md:text-5xl font-bold text-primary">500+</p>
+                    <p class="text-gray-500 mt-2 text-sm uppercase tracking-wider">Projects Completed</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-bold text-accent">ISO</p>
-                    <p class="text-gray-400 mt-2 text-sm uppercase tracking-wider">9001:2015 Certified</p>
+                    <p class="text-4xl md:text-5xl font-bold text-primary">ISO</p>
+                    <p class="text-gray-500 mt-2 text-sm uppercase tracking-wider">9001:2015 Certified</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-bold text-accent">4</p>
-                    <p class="text-gray-400 mt-2 text-sm uppercase tracking-wider">Industries Served</p>
+                    <p class="text-4xl md:text-5xl font-bold text-primary">4</p>
+                    <p class="text-gray-500 mt-2 text-sm uppercase tracking-wider">Industries Served</p>
                 </div>
             </div>
         </div>
@@ -303,7 +304,7 @@
 
     <!-- Value Propositions -->
     <!-- Quality & Certifications Section -->
-    <section class="py-20 bg-dark text-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Left Column: Certification Image -->
@@ -316,26 +317,26 @@
 
                 <!-- Right Column: Quality Policy -->
                 <div>
-                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Quality Assurance</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white text-shadow-hero">Our Commitment to
+                    <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Quality Assurance</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark">Our Commitment to
                         Excellence</h2>
 
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        At <span class="text-white font-semibold">Uitenhage Super Steel (USS)</span>, quality is the
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        At <span class="text-primary font-semibold">Uitenhage Super Steel (USS)</span>, quality is the
                         foundation of every structure we build. We are committed to providing superior steel fabrication
                         and erection services that exceed industry standards.
                     </p>
-                    <p class="text-gray-300 leading-relaxed mb-8">
-                        By adhering to strict <span class="text-accent font-semibold">ISO 9001:2015</span> protocols and
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        By adhering to strict <span class="text-primary font-semibold">ISO 9001:2015</span> protocols and
                         SAISC regulations, we ensure that every project—from small-scale manufacturing to massive
                         industrial developments—is delivered with precision, safety, and structural integrity.
                     </p>
 
                     <div class="flex flex-wrap gap-4">
-                        <div class="bg-white/10 px-4 py-2 rounded-lg border border-white/20 flex items-center">
+                        <div class="bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 flex items-center">
                             <i class="fa-solid fa-certificate text-accent mr-3"></i> ISO 9001:2015
                         </div>
-                        <div class="bg-white/10 px-4 py-2 rounded-lg border border-white/20 flex items-center">
+                        <div class="bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 flex items-center">
                             <i class="fa-solid fa-helmet-safety text-accent mr-3"></i> SAISC Member
                         </div>
                     </div>
@@ -345,12 +346,12 @@
     </section>
 
     <!-- Capabilities Section -->
-    <section id="capabilities" class="py-24 bg-gray-900">
+    <section id="capabilities" class="py-24 bg-light">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">What We Do</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Our Capabilities</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
+                <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">What We Do</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-dark">Our Capabilities</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
             </div>
 
             <!-- Capabilities Grid -->
@@ -358,15 +359,15 @@
 
                 <!-- Fabrication Capabilities -->
                 <div
-                    class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-accent transition-all duration-300 group">
+                    class="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
                     <div
-                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <i
-                            class="fa-solid fa-industry text-3xl text-accent group-hover:text-white transition-colors"></i>
+                            class="fa-solid fa-industry text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Fabrication
+                    <h3 class="text-xl font-bold mb-4 text-dark group-hover:text-primary transition-colors">Fabrication
                         Capabilities</h3>
-                    <ul class="text-gray-300 text-sm space-y-2">
+                    <ul class="text-gray-600 text-sm space-y-2">
                         <li class="flex items-center"><i class="fa-solid fa-check text-accent mr-2 text-xs"></i> Forming
                         </li>
                         <li class="flex items-center"><i class="fa-solid fa-check text-accent mr-2 text-xs"></i> Beam
@@ -390,15 +391,15 @@
 
                 <!-- Project Management -->
                 <div
-                    class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-accent transition-all duration-300 group">
+                    class="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
                     <div
-                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <i
-                            class="fa-solid fa-clipboard-check text-3xl text-accent group-hover:text-white transition-colors"></i>
+                            class="fa-solid fa-clipboard-check text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Project
+                    <h3 class="text-xl font-bold mb-4 text-dark group-hover:text-primary transition-colors">Project
                         Management</h3>
-                    <ul class="text-gray-300 text-sm space-y-2">
+                    <ul class="text-gray-600 text-sm space-y-2">
                         <li class="flex items-center"><i class="fa-solid fa-check text-accent mr-2 text-xs"></i>
                             Pre-construction</li>
                         <li class="flex items-center"><i class="fa-solid fa-check text-accent mr-2 text-xs"></i>
@@ -412,19 +413,19 @@
 
                 <!-- Quality Assurance & Control -->
                 <div
-                    class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-accent transition-all duration-300 group">
+                    class="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
                     <div
-                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <i
-                            class="fa-solid fa-certificate text-3xl text-accent group-hover:text-white transition-colors"></i>
+                            class="fa-solid fa-certificate text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Quality
+                    <h3 class="text-xl font-bold mb-4 text-dark group-hover:text-primary transition-colors">Quality
                         Assurance & Control</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
                         Rigorous quality control processes ensuring every project meets international standards and
                         client specifications.
                     </p>
-                    <ul class="text-gray-300 text-sm space-y-2">
+                    <ul class="text-gray-600 text-sm space-y-2">
                         <li class="flex items-center"><i class="fa-solid fa-check text-accent mr-2 text-xs"></i> ISO
                             9001:2015 Certified</li>
                         <li class="flex items-center"><i class="fa-solid fa-check text-accent mr-2 text-xs"></i> SAISC
@@ -436,15 +437,15 @@
 
                 <!-- Installation / Erecting -->
                 <div
-                    class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-accent transition-all duration-300 group">
+                    class="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
                     <div
-                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <i
-                            class="fa-solid fa-building text-3xl text-accent group-hover:text-white transition-colors"></i>
+                            class="fa-solid fa-building text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Installation
+                    <h3 class="text-xl font-bold mb-4 text-dark group-hover:text-primary transition-colors">Installation
                         / Erecting</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <p class="text-gray-600 text-sm leading-relaxed">
                         Expert on-site assembly and installation managed by experienced teams to ensure structural
                         integrity and safety compliance.
                     </p>
@@ -452,15 +453,15 @@
 
                 <!-- USS Crane & Truck Hire -->
                 <div
-                    class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-accent transition-all duration-300 group">
+                    class="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
                     <div
-                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <i
-                            class="fa-solid fa-truck-front text-3xl text-accent group-hover:text-white transition-colors"></i>
+                            class="fa-solid fa-truck-front text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">USS Crane &
+                    <h3 class="text-xl font-bold mb-4 text-dark group-hover:text-primary transition-colors">USS Crane &
                         Truck Hire</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <p class="text-gray-600 text-sm leading-relaxed">
                         Comprehensive transport and lifting solutions utilizing specialized crane trucks for precision
                         placement and material handling.
                     </p>
@@ -468,14 +469,14 @@
 
                 <!-- Company Qualifications -->
                 <div
-                    class="bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-accent transition-all duration-300 group">
+                    class="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary transition-all duration-300 group shadow-sm hover:shadow-lg">
                     <div
-                        class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300 border border-gray-700">
-                        <i class="fa-solid fa-award text-3xl text-accent group-hover:text-white transition-colors"></i>
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fa-solid fa-award text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Company
+                    <h3 class="text-xl font-bold mb-4 text-dark group-hover:text-primary transition-colors">Company
                         Qualifications</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
                         Certified and recognized by leading industry bodies for excellence in structural steel
                         fabrication.
                     </p>
@@ -495,13 +496,13 @@
     </section>
 
     <!-- Industries Section -->
-    <section id="industries" class="py-24 bg-dark">
+    <section id="industries" class="py-24 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our Expertise</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Industries We Serve</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Our Expertise</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-dark">Industries We Serve</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
                     Delivering structural steel solutions across diverse sectors with precision and excellence.
                 </p>
             </div>
@@ -511,15 +512,15 @@
 
                 <!-- Agricultural Structures -->
                 <div
-                    class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300 group cursor-pointer">
+                    class="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-primary transition-all duration-300 group cursor-pointer">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./images/agricultural.png" alt="Agricultural Structures" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+                        <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
                             Agricultural Structures</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <p class="text-gray-500 text-sm leading-relaxed">
                             Specialized steel structures for farming operations, storage facilities, and agricultural
                             processing plants.
                         </p>
@@ -528,15 +529,15 @@
 
                 <!-- Commercial Structures -->
                 <div
-                    class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300 group cursor-pointer">
+                    class="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-primary transition-all duration-300 group cursor-pointer">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./images/commercial.png" alt="Commercial Structures" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+                        <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
                             Commercial Structures</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <p class="text-gray-500 text-sm leading-relaxed">
                             Retail centers, office buildings, and commercial developments requiring structural steel
                             solutions.
                         </p>
@@ -545,15 +546,15 @@
 
                 <!-- Industrial Structures -->
                 <div
-                    class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300 group cursor-pointer">
+                    class="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-primary transition-all duration-300 group cursor-pointer">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./images/industrial.png" alt="Industrial Structures" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+                        <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
                             Industrial Structures</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <p class="text-gray-500 text-sm leading-relaxed">
                             Manufacturing plants, automotive facilities, power generation, and heavy industrial
                             infrastructure.
                         </p>
@@ -562,15 +563,15 @@
 
                 <!-- Steel Structure Exports -->
                 <div
-                    class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300 group cursor-pointer">
+                    class="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-primary transition-all duration-300 group cursor-pointer">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./images/steel-exports.png" alt="Steel Structure Exports" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">Steel
+                        <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">Steel
                             Structure Exports</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <p class="text-gray-500 text-sm leading-relaxed">
                             International steel fabrication and export services meeting global standards and
                             specifications.
                         </p>
@@ -582,15 +583,15 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-gray-900">
+    <section id="projects" class="py-24 bg-light">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
-                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our Work</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Featured Projects</h2>
+                    <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Our Work</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-dark">Featured Projects</h2>
                 </div>
                 <a href="#"
-                    class="hidden md:inline-block border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded font-medium transition-colors mt-4 md:mt-0">
+                    class="hidden md:inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-medium transition-all mt-4 md:mt-0">
                     View All Projects
                 </a>
             </div>
@@ -599,11 +600,11 @@
             <div class="relative group">
                 <!-- Navigation Arrows -->
                 <button id="prevBtn"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 bg-dark/80 text-accent p-4 rounded-full hover:bg-white hover:scale-110 transition-all shadow-lg border border-accent">
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 bg-primary/80 text-white p-4 rounded-full hover:bg-primary hover:scale-110 transition-all shadow-lg">
                     <i class="fa-solid fa-chevron-left text-xl"></i>
                 </button>
                 <button id="nextBtn"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 bg-dark/80 text-accent p-4 rounded-full hover:bg-white hover:scale-110 transition-all shadow-lg border border-accent">
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 bg-primary/80 text-white p-4 rounded-full hover:bg-primary hover:scale-110 transition-all shadow-lg">
                     <i class="fa-solid fa-chevron-right text-xl"></i>
                 </button>
 
@@ -714,7 +715,7 @@
 
             <div class="mt-8 text-center md:hidden">
                 <a href="#"
-                    class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded font-medium transition-colors">
+                    class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-medium transition-all">
                     View All Projects
                 </a>
             </div>
@@ -723,23 +724,23 @@
 
     <!-- About Us Sections -->
     <!-- Company Profile - Our People -->
-    <section id="about-people" class="py-24 bg-gray-900">
+    <section id="about-people" class="py-24 bg-light">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our People</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-shadow-hero">Company Profile</h2>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        Since 1972, <span class="text-white font-semibold">Uitenhage Super Steel (USS)</span> has been
+                    <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Our People</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Company Profile</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Since 1972, <span class="text-primary font-semibold">Uitenhage Super Steel (USS)</span> has been
                         at the forefront of structural steel manufacturing and erection in the Nelson Mandela Metro's
                         automotive industry hub.
                     </p>
-                    <p class="text-gray-300 leading-relaxed mb-4">
+                    <p class="text-gray-600 leading-relaxed mb-4">
                         Our team of highly skilled engineers, fabricators, and project managers brings decades of
                         combined experience to every project. We pride ourselves on our technical expertise, commitment
                         to quality, and ability to deliver complex structural steel solutions on time and within budget.
                     </p>
-                    <p class="text-gray-300 leading-relaxed">
+                    <p class="text-gray-600 leading-relaxed">
                         From conceptual design through final installation, our people are the foundation of our success,
                         combining traditional craftsmanship with modern manufacturing techniques.
                     </p>
@@ -753,7 +754,7 @@
     </section>
 
     <!-- Our Facilities -->
-    <section id="about-facilities" class="py-24 bg-dark">
+    <section id="about-facilities" class="py-24 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="order-2 lg:order-1 relative h-96 rounded-lg overflow-hidden shadow-2xl">
@@ -761,14 +762,14 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
                 <div class="order-1 lg:order-2">
-                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our Facilities</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-shadow-hero">State-of-the-Art
+                    <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Our Facilities</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">State-of-the-Art
                         Manufacturing</h2>
-                    <p class="text-gray-300 leading-relaxed mb-4">
+                    <p class="text-gray-600 leading-relaxed mb-4">
                         Our manufacturing facility in Uitenhage is equipped with cutting-edge fabrication technology and
                         comprehensive material handling capabilities.
                     </p>
-                    <ul class="text-gray-300 space-y-3 mb-6">
+                    <ul class="text-gray-600 space-y-3 mb-6">
                         <li class="flex items-start">
                             <i class="fa-solid fa-check text-accent mr-3 mt-1"></i>
                             <span>Advanced CNC cutting and drilling equipment for precision fabrication</span>
@@ -792,40 +793,40 @@
     </section>
 
     <!-- Our Values -->
-    <section id="about-values" class="py-24 bg-gray-900">
+    <section id="about-values" class="py-24 bg-light">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our Values</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">What Drives Us</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
+                <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Our Values</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-dark">What Drives Us</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 text-center">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="bg-white p-8 rounded-lg border border-gray-200 text-center shadow-sm">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fa-solid fa-shield-halved text-3xl text-accent"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Quality & Safety</h3>
-                    <p class="text-gray-400 leading-relaxed">
+                    <h3 class="text-xl font-bold text-dark mb-4">Quality & Safety</h3>
+                    <p class="text-gray-500 leading-relaxed">
                         Unwavering commitment to ISO 9001:2015 standards and comprehensive safety protocols on every
                         project.
                     </p>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 text-center">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="bg-white p-8 rounded-lg border border-gray-200 text-center shadow-sm">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fa-solid fa-handshake text-3xl text-accent"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Integrity</h3>
-                    <p class="text-gray-400 leading-relaxed">
+                    <h3 class="text-xl font-bold text-dark mb-4">Integrity</h3>
+                    <p class="text-gray-500 leading-relaxed">
                         Building lasting relationships through honest communication, transparency, and delivering on our
                         promises.
                     </p>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 text-center">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="bg-white p-8 rounded-lg border border-gray-200 text-center shadow-sm">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fa-solid fa-lightbulb text-3xl text-accent"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Innovation</h3>
-                    <p class="text-gray-400 leading-relaxed">
+                    <h3 class="text-xl font-bold text-dark mb-4">Innovation</h3>
+                    <p class="text-gray-500 leading-relaxed">
                         Continuously improving our processes and adopting new technologies to deliver better results.
                     </p>
                 </div>
@@ -834,13 +835,13 @@
     </section>
 
     <!-- Our Customers -->
-    <section id="about-customers" class="py-24 bg-dark">
+    <section id="about-customers" class="py-24 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Our Customers</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Trusted by Industry Leaders</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Our Customers</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-dark">Trusted by Industry Leaders</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
                     We're proud to partner with South Africa's leading companies across automotive, industrial,
                     commercial, and agricultural sectors.
                 </p>
@@ -848,14 +849,14 @@
             <!-- Customer Logos Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center max-w-3xl mx-auto">
                 <!-- VW -->
-                <div class="bg-white/5 p-3 rounded-lg border border-gray-700 hover:border-accent transition-all h-40 group cursor-pointer">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 hover:border-primary transition-all h-40 group cursor-pointer">
                     <div class="bg-white rounded-md w-full h-full flex items-center justify-center p-4 group-hover:shadow-lg transition-all">
                         <img src="./images/VW.png" alt="VWSA" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" style="filter: brightness(0);">
                     </div>
                 </div>
 
                 <!-- DCD Wind Towers -->
-                <div class="bg-white/5 p-3 rounded-lg border border-gray-700 hover:border-accent transition-all h-40 group cursor-pointer">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 hover:border-primary transition-all h-40 group cursor-pointer">
                     <div class="bg-white rounded-md w-full h-full flex flex-col items-center justify-center p-4 group-hover:shadow-lg transition-all">
                         <i class="fa-solid fa-wind text-4xl text-gray-500 mb-2"></i>
                         <span class="text-gray-700 font-bold text-center leading-tight text-sm">DCD<br><span class="font-normal text-gray-500">Wind Towers</span></span>
@@ -863,7 +864,7 @@
                 </div>
 
                 <!-- Greenacres -->
-                <div class="bg-white/5 p-3 rounded-lg border border-gray-700 hover:border-accent transition-all h-40 group cursor-pointer">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 hover:border-primary transition-all h-40 group cursor-pointer">
                     <div class="bg-white rounded-md w-full h-full flex items-center justify-center p-4 group-hover:shadow-lg transition-all">
                         <img src="https://greenacres.co.za/wp-content/uploads/2024/10/Group-1053.svg" alt="Greenacres Shopping Centre"
                             class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105">
@@ -874,54 +875,54 @@
     </section>
 
     <!-- Request a Quote -->
-    <section id="quote" class="py-24 bg-gray-900">
+    <section id="quote" class="py-24 bg-light">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <span class="text-accent font-semibold tracking-wider uppercase mb-2 block">Get Started</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero">Request a Quote</h2>
-                    <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full"></div>
+                    <span class="text-primary font-semibold tracking-wider uppercase mb-2 block text-sm">Get Started</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-dark">Request a Quote</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
                     <p class="text-gray-300 mt-6">
                         Tell us about your project and we'll get back to you with a detailed quote.
                     </p>
                 </div>
 
                 <!-- Quote Form -->
-                <form id="quote-form" class="bg-gray-800 p-8 md:p-12 rounded-lg border border-gray-700">
+                <form id="quote-form" class="bg-white p-8 md:p-12 rounded-lg border border-gray-200 shadow-xl">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
                             <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors">
+                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
                         </div>
                         <div>
-                            <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company
                                 Name</label>
                             <input type="text" id="company" name="company"
-                                class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors">
+                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address
                                 *</label>
                             <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors">
+                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
                         </div>
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number
                                 *</label>
                             <input type="tel" id="phone" name="phone" required
-                                class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors">
+                                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
                         </div>
                     </div>
 
                     <div class="mb-6">
-                        <label for="industry" class="block text-sm font-medium text-gray-300 mb-2">Industry / Project
+                        <label for="industry" class="block text-sm font-medium text-gray-700 mb-2">Industry / Project
                             Type *</label>
                         <select id="industry" name="industry" required
-                            class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-accent transition-colors">
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark focus:outline-none focus:border-primary transition-colors">
                             <option value="">Select an industry</option>
                             <option value="agricultural">Agricultural Structures</option>
                             <option value="commercial">Commercial Structures</option>
@@ -932,18 +933,18 @@
                     </div>
 
                     <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Description
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Project Description
                             *</label>
                         <textarea id="message" name="message" rows="6" required
                             placeholder="Please provide details about your project requirements, timeline, and any specific specifications..."
-                            class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark placeholder-gray-400 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
                     </div>
 
                     <div class="mb-6">
-                        <label for="timeline" class="block text-sm font-medium text-gray-300 mb-2">Project
+                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">Project
                             Timeline</label>
                         <select id="timeline" name="timeline"
-                            class="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-accent transition-colors">
+                            class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-dark focus:outline-none focus:border-primary transition-colors">
                             <option value="urgent">Urgent (Within 1 month)</option>
                             <option value="short">Short-term (1-3 months)</option>
                             <option value="medium">Medium-term (3-6 months)</option>
@@ -955,7 +956,7 @@
                     <div class="flex items-center justify-between">
                         <p class="text-sm text-gray-400">* Required fields</p>
                         <button type="submit"
-                            class="bg-accent hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            class="btn-primary px-8 py-3 font-semibold">
                             Submit Quote Request
                         </button>
                     </div>
@@ -963,7 +964,7 @@
 
                 <!-- Success Message (Hidden by default) -->
                 <div id="quote-success"
-                    class="hidden bg-green-500/10 border border-green-500 text-green-500 p-6 rounded-lg mt-6">
+                    class="hidden bg-green-50 border border-green-400 text-green-700 p-6 rounded-lg mt-6">
                     <div class="flex items-center">
                         <i class="fa-solid fa-circle-check text-2xl mr-4"></i>
                         <div>
@@ -976,7 +977,7 @@
 
                 <!-- Error Message (Hidden by default) -->
                 <div id="quote-error"
-                    class="hidden bg-red-500/10 border border-red-500 text-red-500 p-6 rounded-lg mt-6">
+                    class="hidden bg-red-50 border border-red-400 text-red-700 p-6 rounded-lg mt-6">
                     <div class="flex items-center">
                         <i class="fa-solid fa-circle-exclamation text-2xl mr-4"></i>
                         <div>
@@ -995,18 +996,18 @@
         <i class="fa-solid fa-industry absolute -bottom-10 -right-10 text-9xl text-white/5 rotate-12"></i>
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white text-shadow-hero mb-6">Ready to start your project?
+            <h2 class="text-3xl md:text-5xl font-bold text-dark mb-6">Ready to start your project?
             </h2>
             <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
                 Our friendly team would love to hear from you. Let's build something great together.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
                 <a href="mailto:ginkel@uss.co.za"
-                    class="bg-accent hover:bg-orange-700 text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                    class="btn-primary text-lg font-semibold w-full sm:w-auto text-center">
                     <i class="fa-solid fa-envelope mr-2"></i> Email Us
                 </a>
                 <a href="tel:+27419228060"
-                    class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded text-lg font-semibold transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                    class="btn-ghost text-lg font-semibold w-full sm:w-auto text-center">
                     <i class="fa-solid fa-phone mr-2"></i> +27 41 922 8060
                 </a>
             </div>
@@ -1014,7 +1015,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <footer class="bg-primary text-white pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Branding -->
@@ -1029,11 +1030,11 @@
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://www.linkedin.com/in/uitenhage-super-steel-972240294/" target="_blank" aria-label="USS on LinkedIn"
-                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-accent flex items-center justify-center transition-colors">
+                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
                             <i class="fa-brands fa-linkedin-in text-white"></i>
                         </a>
                         <a href="https://www.facebook.com/UitenhageSuperSteel/" target="_blank" aria-label="USS on Facebook"
-                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-accent flex items-center justify-center transition-colors">
+                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
                             <i class="fa-brands fa-facebook-f text-white"></i>
                         </a>
                     </div>
@@ -1041,21 +1042,21 @@
 
                 <!-- Links -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-accent inline-block pb-1">Quick Links
+                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-white/30 inline-block pb-1">Quick Links
                     </h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition-colors">Home</a></li>
                         <li><a href="#capabilities"
-                                class="text-gray-400 hover:text-accent transition-colors">Capabilities</a>
+                                class="text-blue-200 hover:text-white transition-colors">Capabilities</a>
                         </li>
                         <li><a href="#industries"
-                                class="text-gray-400 hover:text-accent transition-colors">Industries</a>
+                                class="text-blue-200 hover:text-white transition-colors">Industries</a>
                         </li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-accent transition-colors">Projects</a>
+                        <li><a href="#projects" class="text-blue-200 hover:text-white transition-colors">Projects</a>
                         </li>
-                        <li><a href="#about-people" class="text-gray-400 hover:text-accent transition-colors">About
+                        <li><a href="#about-people" class="text-blue-200 hover:text-white transition-colors">About
                                 Us</a></li>
-                        <li><a href="#quote" class="text-gray-400 hover:text-accent transition-colors">Request a
+                        <li><a href="#quote" class="text-blue-200 hover:text-white transition-colors">Request a
                                 Quote</a>
                         </li>
                     </ul>
@@ -1063,22 +1064,22 @@
 
                 <!-- Services -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-accent inline-block pb-1">
+                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-white/30 inline-block pb-1">
                         Capabilities
                     </h4>
                     <ul class="space-y-3">
                         <li><a href="#capabilities"
-                                class="text-gray-400 hover:text-accent transition-colors">Fabrication</a>
+                                class="text-blue-200 hover:text-white transition-colors">Fabrication</a>
                         </li>
-                        <li><a href="#capabilities" class="text-gray-400 hover:text-accent transition-colors">Project
+                        <li><a href="#capabilities" class="text-blue-200 hover:text-white transition-colors">Project
                                 Management</a>
                         </li>
-                        <li><a href="#capabilities" class="text-gray-400 hover:text-accent transition-colors">Quality
+                        <li><a href="#capabilities" class="text-blue-200 hover:text-white transition-colors">Quality
                                 Assurance</a>
                         </li>
                         <li><a href="#capabilities"
-                                class="text-gray-400 hover:text-accent transition-colors">Installation</a></li>
-                        <li><a href="#capabilities" class="text-gray-400 hover:text-accent transition-colors">Crane &
+                                class="text-blue-200 hover:text-white transition-colors">Installation</a></li>
+                        <li><a href="#capabilities" class="text-blue-200 hover:text-white transition-colors">Crane &
                                 Truck Hire</a>
                         </li>
                     </ul>
@@ -1086,7 +1087,7 @@
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-accent inline-block pb-1">Contact
+                    <h4 class="text-lg font-bold mb-6 text-white border-b-2 border-white/30 inline-block pb-1">Contact
                     </h4>
                     <ul class="space-y-4">
                         <li class="flex items-start">
@@ -1107,7 +1108,7 @@
             </div>
 
             <div
-                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-blue-200">
                 <p>&copy; 2026 Uitenhage Super Steel (USS). All rights reserved. Established 1972.</p>
                 <div class="mt-4 md:mt-0 space-x-6">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>

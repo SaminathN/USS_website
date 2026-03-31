@@ -102,6 +102,27 @@ function initCarousel(config) {
     updateCarousel();
 }
 
+// Nav scroll behaviour — transparent over hero, solid white on scroll
+(function () {
+    const navbar = document.getElementById('navbar');
+    const logo = document.getElementById('nav-logo');
+
+    function updateNav() {
+        if (window.scrollY > 60) {
+            navbar.classList.add('scrolled');
+            // Restore logo to full colour on white nav
+            if (logo) { logo.classList.remove('brightness-0', 'invert'); }
+        } else {
+            navbar.classList.remove('scrolled');
+            // Keep logo white (inverted) on transparent dark nav
+            if (logo) { logo.classList.add('brightness-0', 'invert'); }
+        }
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav(); // run on load
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Logic
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

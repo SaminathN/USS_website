@@ -1,80 +1,205 @@
-/* Custom CSS for Able Steel Website */
+/* USS Website — VW-Style Theme */
 
 /* Smooth Scrolling & Header Offset */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
-    /* Modern fix for sticky headers */
 }
 
 section {
     scroll-margin-top: 100px;
-    /* Fallback */
 }
 
-/* Text Shadow for Hero visibility */
-.text-shadow-hero {
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1e293b;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #374151;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #CC0000;
-}
-
-/* Base Styles */
+/* Base */
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #000e26;
 }
 
-/* Navigation Scroll Effect Class (applied via JS) */
-.scrolled {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    background-color: rgba(255, 255, 255, 0.98);
+/* Scrollbar — light theme */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f4f4f4; }
+::-webkit-scrollbar-thumb { background: #c2cacf; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #001e50; }
+
+/* =====================
+   NAVIGATION
+   ===================== */
+
+/* Transparent state (over hero) */
+#navbar {
+    background: transparent;
+    box-shadow: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Mobile Menu Animation */
-.mobile-menu-enter {
-    transform: translateX(100%);
+/* Gradient shim — fades dark at top so white nav links are readable over video */
+#navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 160px;
+    background: linear-gradient(rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
+/* Scrolled state */
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 12px rgba(0, 30, 80, 0.1);
+}
+
+#navbar.scrolled::before {
+    display: none;
+}
+
+/* Nav links — white when transparent, navy when scrolled */
+.nav-link {
+    color: rgba(255, 255, 255, 0.92);
+    transition: color 0.2s ease;
+}
+.nav-link:hover { color: #00b0f0; }
+
+#navbar.scrolled .nav-link {
+    color: #6a767d;
+}
+#navbar.scrolled .nav-link:hover {
+    color: #001e50;
+}
+
+/* Nav CTA button */
+.nav-cta {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    border-radius: 100px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+.nav-cta:hover {
+    background: #00b0f0;
+    border-color: #00b0f0;
+    color: white;
+}
+
+#navbar.scrolled .nav-cta {
+    background: #001e50;
+    color: white;
+    border-color: #001e50;
+}
+#navbar.scrolled .nav-cta:hover {
+    background: #0040c5;
+    border-color: #0040c5;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn-icon {
+    color: white;
+    transition: color 0.2s ease;
+}
+#navbar.scrolled .mobile-menu-btn-icon {
+    color: #000e26;
+}
+
+/* =====================
+   BUTTONS — Pill Shape
+   ===================== */
+
+/* Primary CTA (hero and sections) */
+.btn-primary {
+    background: #001e50;
+    color: white;
+    border-radius: 100px;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #001e50;
+    transition: all 0.15s ease-in-out;
+    display: inline-block;
+    text-align: center;
+}
+.btn-primary:hover {
+    background: #0040c5;
+    border-color: #0040c5;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,30,80,0.25);
+}
+
+/* Ghost / outline (on dark backgrounds) */
+.btn-ghost {
+    background: transparent;
+    color: white;
+    border-radius: 100px;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.8);
+    transition: all 0.15s ease-in-out;
+    display: inline-block;
+    text-align: center;
+}
+.btn-ghost:hover {
+    background: #00b0f0;
+    border-color: #00b0f0;
+    color: #001e50;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,176,240,0.3);
+}
+
+/* =====================
+   CARDS
+   ===================== */
+.card-vw {
+    background: white;
+    border: 1px solid #dfe4e8;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.card-vw:hover {
+    border-color: #001e50;
+    box-shadow: 0 8px 32px rgba(0,30,80,0.1);
+}
+
+/* =====================
+   TEXT SHADOW (hero only)
+   ===================== */
+.text-shadow-hero {
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================
+   MOBILE MENU
+   ===================== */
+.mobile-menu-enter { transform: translateX(100%); }
 .mobile-menu-enter-active {
     transform: translateX(0);
     transition: transform 300ms ease-in-out;
 }
-
-.mobile-menu-exit {
-    transform: translateX(0);
-}
-
+.mobile-menu-exit { transform: translateX(0); }
 .mobile-menu-exit-active {
     transform: translateX(100%);
     transition: transform 300ms ease-in-out;
 }
 
-/* Image Hover Zoom Effect Helper */
-.hover-zoom-container {
-    overflow: hidden;
-}
+/* =====================
+   IMAGE ZOOM
+   ===================== */
+.hover-zoom-container { overflow: hidden; }
+.hover-zoom-img { transition: transform 0.5s ease; }
+.hover-zoom-container:hover .hover-zoom-img { transform: scale(1.1); }
 
-.hover-zoom-img {
-    transition: transform 0.5s ease;
-}
-
-.hover-zoom-container:hover .hover-zoom-img {
-    transform: scale(1.1);
+/* =====================
+   SECTION DIVIDER
+   ===================== */
+.section-divider {
+    width: 3rem;
+    height: 3px;
+    background: #001e50;
+    border-radius: 9999px;
+    margin: 1.25rem auto 0;
 }
